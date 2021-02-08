@@ -1,0 +1,43 @@
+WarGreymon
+by V
+
+Slash Combo: a,a,a
+Kick Combo: b,b,b
+Air Slash Combo: (In Air) a,a
+Air Kick Combo: (In Air) b,b
+Slash Upper: Hold Back + a, sends opponent flying for air combo
+
+Dramon Killer: D, D, c
+Brave Tornado (Air Possible): D, F, c
+-2nd BT up : Hold Up + c
+-2nd BT forward : Hold Up + c
+-2nd BT back : Hold Up + c
+-2nd BT down : Hold Up + c (must be at a certain height)
+Brave Tornado Up (Air Possible): D, B, c 
+-2nd BT up : Hold Up + c
+-2nd BT forward : Hold Up + c
+-2nd BT back : Hold Up + c
+-2nd BT down : Hold Up + c (must be at a certain height)
+
+Strikers:
+Imperialdramon Fighter Mode - Giga Death (1200 power): D,D,x
+Dukemon - Final Elysian (800 Power): D,F,x
+BlackWarGreymon - Gaia Destroyer (500 power): D,B,x
+
+Ougi Mode:
+Press y once for Lv1 (red)
+y twice for Lv2 (purple)
+& y three times for Lv3 (light blue)
+then press b to initiate attack
+
+Lv 1: Gaia Force (works best on stages with superjumps)
+Lv 2: Omnimon - Grey Sword
+Lv 3: Susanoomon - Ama no Habakiri
+
+*Can be done while in a combo
+
+Thanx to:
+StickofDoom for NH3 Char Template
+GodPharaoh for WarGreymon, Imperialdramon, & other sprites
+d'Legend for strikers idea
+Everyone in MFFA (You guyz ROCK!)

@@ -1,0 +1,24 @@
+----------------------------------------------
+[Moves]
+
+X X X = 3 slash knockdown
+
+A A A = 3 slash popup
+
+Y = Pulse Wave
+
+DF A = flash up
+
+DF X = smash down
+
+B = Sonic (special)
+
+(In Air) B = multiple wave (downward Special)
+
+
+
+
+
+
+
+

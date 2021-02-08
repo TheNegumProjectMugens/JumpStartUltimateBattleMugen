@@ -1,0 +1,310 @@
+;SFF Palette type
+palettetype = 1
+;0 use sprlinks, 1 no link sprites
+nolink = 0
+
+;Sprite 1
+[SpriteDef]
+group = 9000
+image = 0
+xaxis = 3
+yaxis = 4
+pcximage = 0-9000,0.pcx
+prevpalette = 0
+
+;Sprite 2
+[SpriteDef]
+group = 9000
+image = 1
+xaxis = 0
+yaxis = 0
+pcximage = 0-9000,1.pcx
+prevpalette = 1
+
+;Sprite 3
+[SpriteDef]
+group = 9999
+image = 0
+xaxis = 0
+yaxis = 0
+pcximage = 0-9999,0.pcx
+prevpalette = 1
+
+;Sprite 4
+[SpriteDef]
+group = 0
+image = 0
+xaxis = 26
+yaxis = 52
+pcximage = 0-0,0.pcx
+prevpalette = 1
+
+;Sprite 5
+[SpriteDef]
+group = 0
+image = 1
+xaxis = 25
+yaxis = 52
+pcximage = 0-0,1.pcx
+prevpalette = 1
+
+;Sprite 6
+[SpriteDef]
+group = 0
+image = 2
+xaxis = 25
+yaxis = 52
+pcximage = 0-0,2.pcx
+prevpalette = 1
+
+;Sprite 7
+[SpriteDef]
+group = 20
+image = 0
+xaxis = 33
+yaxis = 41
+pcximage = 0-20,0.pcx
+prevpalette = 1
+
+;Sprite 8
+[SpriteDef]
+group = 20
+image = 1
+xaxis = 33
+yaxis = 40
+pcximage = 0-20,1.pcx
+prevpalette = 1
+
+;Sprite 9
+[SpriteDef]
+group = 20
+image = 2
+xaxis = 33
+yaxis = 41
+pcximage = 0-20,2.pcx
+prevpalette = 1
+
+;Sprite 10
+[SpriteDef]
+group = 20
+image = 3
+xaxis = 35
+yaxis = 40
+pcximage = 0-20,3.pcx
+prevpalette = 1
+
+;Sprite 11
+[SpriteDef]
+group = 20
+image = 4
+xaxis = 33
+yaxis = 41
+pcximage = 0-20,4.pcx
+prevpalette = 1
+
+;Sprite 12
+[SpriteDef]
+group = 20
+image = 5
+xaxis = 32
+yaxis = 40
+pcximage = 0-20,5.pcx
+prevpalette = 1
+
+;Sprite 13
+[SpriteDef]
+group = 20
+image = 6
+xaxis = 33
+yaxis = 41
+pcximage = 0-20,6.pcx
+prevpalette = 1
+
+;Sprite 14
+[SpriteDef]
+group = 20
+image = 7
+xaxis = 33
+yaxis = 40
+pcximage = 0-20,7.pcx
+prevpalette = 1
+
+;Sprite 15
+[SpriteDef]
+group = 430
+image = 0
+xaxis = 25
+yaxis = 42
+pcximage = 0-430,0.pcx
+prevpalette = 1
+
+;Sprite 16
+[SpriteDef]
+group = 430
+image = 1
+xaxis = 26
+yaxis = 39
+pcximage = 0-430,1.pcx
+prevpalette = 1
+
+;Sprite 17
+[SpriteDef]
+group = 105
+image = 0
+xaxis = 22
+yaxis = 46
+pcximage = 0-105,0.pcx
+prevpalette = 1
+
+;Sprite 18
+[SpriteDef]
+group = 105
+image = 1
+xaxis = 22
+yaxis = 46
+pcximage = 0-105,1.pcx
+prevpalette = 1
+
+;Sprite 19
+[SpriteDef]
+group = 190
+image = 0
+xaxis = 11
+yaxis = 53
+pcximage = 0-190,0.pcx
+prevpalette = 1
+
+;Sprite 20
+[SpriteDef]
+group = 190
+image = 1
+xaxis = 12
+yaxis = 53
+pcximage = 0-190,1.pcx
+prevpalette = 1
+
+;Sprite 21
+[SpriteDef]
+group = 190
+image = 2
+xaxis = 12
+yaxis = 52
+pcximage = 0-190,2.pcx
+prevpalette = 1
+
+;Sprite 22
+[SpriteDef]
+group = 190
+image = 3
+xaxis = 8
+yaxis = 51
+pcximage = 0-190,3.pcx
+prevpalette = 1
+
+;Sprite 23
+[SpriteDef]
+group = 190
+image = 4
+xaxis = 15
+yaxis = 44
+pcximage = 0-190,4.pcx
+prevpalette = 1
+
+;Sprite 24
+[SpriteDef]
+group = 190
+image = 5
+xaxis = 35
+yaxis = 45
+pcximage = 0-190,5.pcx
+prevpalette = 1
+
+;Sprite 25
+[SpriteDef]
+group = 190
+image = 6
+xaxis = 43
+yaxis = 53
+pcximage = 0-190,6.pcx
+prevpalette = 1
+
+;Sprite 26
+[SpriteDef]
+group = 190
+image = 7
+xaxis = 19
+yaxis = 77
+pcximage = 0-190,7.pcx
+prevpalette = 1
+
+;Sprite 27
+[SpriteDef]
+group = 40
+image = 0
+xaxis = 26
+yaxis = 45
+pcximage = 0-40,0.pcx
+prevpalette = 1
+
+;Sprite 28
+[SpriteDef]
+group = 40
+image = 1
+xaxis = 26
+yaxis = 45
+pcximage = 0-40,1.pcx
+prevpalette = 1
+
+;Sprite 29
+[SpriteDef]
+group = 40
+image = 2
+xaxis = 35
+yaxis = 45
+pcximage = 0-40,2.pcx
+prevpalette = 1
+
+;Sprite 30
+[SpriteDef]
+group = 40
+image = 3
+xaxis = 26
+yaxis = 61
+pcximage = 0-40,3.pcx
+prevpalette = 1
+
+;Sprite 31
+[SpriteDef]
+group = 40
+image = 4
+xaxis = 26
+yaxis = 60
+pcximage = 0-40,4.pcx
+prevpalette = 1
+
+;Sprite 32
+[SpriteDef]
+group = 120
+image = 0
+xaxis = 26
+yaxis = 42
+pcximage = 0-120,0.pcx
+prevpalette = 1
+
+;Sprite 33
+[SpriteDef]
+group = 120
+image = 1
+xaxis = 23
+yaxis = 53
+pcximage = 0-120,1.pcx
+prevpalette = 1
+
+;Sprite 34
+[SpriteDef]
+group = 120
+image = 2
+xaxis = 22
+yaxis = 42
+pcximage = 0-120,2.pcx
+prevpalette = 1

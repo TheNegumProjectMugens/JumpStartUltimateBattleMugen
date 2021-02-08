@@ -1,0 +1,20 @@
+[Info]
+name="Yagami Light"
+displayname="Kira"
+versiondate=2009/08/02
+mugenversion=
+author="MGSSJ2"
+pal.defaults=1,2
+[Files]
+sprite=kira.sff
+sound=kira.snd
+anim=kira.air
+cmd=kira.cmd
+cns=kira.cns
+st=kira.cns
+stcommon=common1.cns
+pal1=kira.act
+pal2=kira.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

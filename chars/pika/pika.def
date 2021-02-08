@@ -1,0 +1,27 @@
+; Definition file for Pikachu
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name = "Pikachu by XGargoyle"
+displayname = "Pikachu"
+versiondate = 01,01,2001    ;Version date of character
+mugenversion = 04,14,2001   ;Version of M.U.G.E.N character works on
+author = "XGargoyle, fixer  Shadowtak"         ;Character author name
+pal.defaults = 6,3,4,2
+
+; Files for the player
+[Files]
+cmd     = pika.cmd   ;Command set
+cns     = pika.cns   ;Constants
+st      = pika.cns   ;States
+stcommon = common1.cns     ;Common states
+sprite  = pika.sff   ;Sprite
+anim    = pika.air   ;Animation
+sound   = pika.snd   ;Sound
+pal1    = pika.act   ;Normal Pikachu
+;pal2    = pika2.act  ;Blue Pikachu (palette made by MICROmor)
+;pal3    = pika3.act  ; Light Blue Pikachu
+;pal4    = pika4.act  ; Pink/Purple Pikachu
+;pal5    = pika5.act  ;
+;pal6    = pika6.act  ;

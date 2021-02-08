@@ -1,0 +1,30 @@
+; Definition file for Mario
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name ="NGPC Mario"
+displayname ="Mario"
+versiondate =2005.4.16
+mugenversion =04,14,2002
+author ="N64Mario, TMasta & Soliduma"
+pal.defaults =1,2
+
+; Files for the player
+[Files]
+cmd     =command.cmd
+cns     =constant.cns
+stcommon =common1.cns
+st      =state.cns
+sprite  =mario.sff
+anim    =animation.air
+sound   =sound.snd
+pal1=colors/mario.act
+pal2=colors/MarioFir.act
+
+st1=state-s.cns
+st2=state-h.cns
+st3=override.cns
+[Arcade]
+intro.storyboard=
+ending.storyboard=

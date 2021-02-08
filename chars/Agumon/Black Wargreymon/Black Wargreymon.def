@@ -1,0 +1,19 @@
+[Info]
+name="bwar"
+displayname="Black Wargreymon"
+versiondate=06/12/2008
+mugenversion=
+author="The_Virus_X"
+pal.defaults=1
+[Files]
+sprite=bwar.sff
+sound=bwar.snd
+anim=bwar.air
+cmd=bwar.cmd
+cns=bwar.cns
+st=bwar.cns
+stcommon=comun.cns
+pal1=bwar.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

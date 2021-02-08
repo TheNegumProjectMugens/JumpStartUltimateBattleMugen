@@ -1,0 +1,19 @@
+; Definition file for super sonic
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name = "ssonic"
+displayname = "Super Sonic"
+
+; Files for the player
+[Files]
+cmd     = sonic2.cmd   ;Command set
+cns     = sonic2.cns   ;Constants
+st      = sonic2.cns   ;States
+stcommon = common1.cns     ;Common states
+sprite  = sonic.sff   ;Sprite
+anim    = sonic2.air   ;Animation
+sound   = sonic.snd   ;Sound
+;pal1    = original.act   ;Palettes (can have up to 12)
+;pal2    = original.act   

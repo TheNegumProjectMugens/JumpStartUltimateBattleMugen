@@ -1,0 +1,36 @@
+-Credits-
+Yusuke sprites ripped by Bonzai
+Hiei sprites ripped by Rei Master
+Reigun and other effects ripped by Bonzai
+
+-Movelist-
+
+Basics:
+	a - Punch
+	b - Uppercut
+	x - Kick
+	y - Strong Punch
+	c - Dash Punch
+	Jump+a/y - Jump Punch I
+	Jump+b/x - Jump Punch II
+
+Combos:
+	Combo I - a, a, y
+	Combo II - a, a, a, a, c
+	Combo III - a, a, b, c
+	Combo IV - b, c
+
+Specials:
+
+	Reigun ( Costs 500 power ) - D, F, z
+	Summon Hiei ( Costs 1500 power ) - D+c
+	Shotgun ( Costs 2000 power ) - D, B, z 
+	Reigun Double ( Cost 2500 power ) - B, D, z
+	Majin Yusuke ( Costs 3000 power ) - D, D, z
+
+Notes:
+
+Yes, as some people will find there is a Spirit Wave attack. Though it is hardly finished and I
+personally don't like it and that is why it's removed, go ahead and readd it if you like ( not
+like I could stop you anyway ).
+	

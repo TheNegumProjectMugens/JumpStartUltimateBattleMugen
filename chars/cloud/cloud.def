@@ -1,0 +1,30 @@
+; ‚±‚±‚ÉƒLƒƒƒ‰î•ñ‚ğ‘‚¢‚Ä‚­‚¾‚³‚¢
+[Info]
+name ="Cloud"
+displayname ="cloud"
+versiondate =2,20,2005
+mugenversion =11,20,2005
+author ="hyuga"
+pal.defaults =1,2
+
+; Files for the player
+[Files]
+cmd     =cloud.cmd
+cns     =cloud.cns
+st      =cloud.cns
+stcommon =common1.cns 
+sprite  =cloud.sff
+anim    =cloud.air
+sound   =cloud.snd
+pal1=c.act
+pal2=c.act
+
+st1=-3.cns
+st2=jump.cns
+st3=power.cns
+st4=striker.cns
+st5=away.cns
+st6=airdash.cns
+[Arcade]
+intro.storyboard=
+ending.storyboard=

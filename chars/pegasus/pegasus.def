@@ -1,0 +1,24 @@
+[Info]
+name="Caballero Pegaso"
+displayname="seiya de pegasus"
+versiondate=28/02/2009
+mugenversion=04,14,2002
+author="razzielito"
+pal.defaults=1
+[Files]
+sprite=pegasus.sff
+sound=
+anim=pegasus.air
+cmd=pegasus.cmd
+cns=pegasus.cns
+st=pegasus.cns
+stcommon=common1.cns
+pal1=pegasus.act
+pal2=pegasus.act
+pal3=pegasus.act
+pal4=pegasus.act
+pal5=pegasus.act
+pal6=3.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

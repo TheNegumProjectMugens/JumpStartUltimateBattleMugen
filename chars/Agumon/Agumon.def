@@ -1,0 +1,20 @@
+[Info]
+name="blackwar"
+displayname="Agumon"
+versiondate=31/10/2008
+mugenversion=
+author="The_Virus_X  AKA Diego Reinoso"
+pal.defaults=1,2
+[Files]
+sprite=blackwar.sff
+sound=blackwar.snd
+anim=blackwar.air
+cmd=blackwar.cmd
+cns=blackwar.cns
+st=blackwar.cns
+stcommon=common1.cns
+pal1=agumon.act
+pal2=Blackwar.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

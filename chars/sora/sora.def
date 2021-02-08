@@ -1,0 +1,29 @@
+; Definition file for Sora
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name ="Sora"
+displayname ="Sora"
+versiondate =06,14,2002
+mugenversion =06,14,2003
+author ="Bane84"
+pal.defaults =1,2
+
+; Files for the player
+[Files]
+cmd     =sora.cmd
+cns     =sora.cns
+st      =sora.cns
+;st3     = sorapartyAI.cns ;Party Member AI
+stcommon =soracommon.cns
+sprite  =sora.sff
+anim    =sora.air
+sound   =sora.snd
+pal1=sora1.act
+pal2=sora1.act
+st1=soraparty.cns
+st2=soraparty.cns
+[Arcade]
+intro.storyboard=
+ending.storyboard=

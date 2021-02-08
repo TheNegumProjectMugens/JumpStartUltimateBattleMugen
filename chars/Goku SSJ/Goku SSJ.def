@@ -1,0 +1,30 @@
+; Definition file for Kung Fu Man
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name ="Goku"
+displayname ="Goku SSJ"
+versiondate =04,14,2002
+mugenversion =04,14,2002
+author ="Akimoto"
+pal.defaults =1,2
+
+; Files for the player
+[Files]
+cmd     =Goku.cmd   
+cns     =Goku.cns   
+st      =Goku.cns   
+stcommon =common1.cns 
+sprite  =Goku.sff  
+anim    =Goku.air   
+sound   =Goku.snd 
+pal1=Goku.act
+pal2=Dark.act
+;pal3=White.act
+;pal4=Red.act
+
+
+[Arcade]
+intro.storyboard=
+ending.storyboard=

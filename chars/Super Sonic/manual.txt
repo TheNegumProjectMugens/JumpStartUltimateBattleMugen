@@ -1,0 +1,88 @@
+-----------------------------------------------------------------------
+Super sonic versão 95%  por Ssonic 
+-----------------------------------------------------------------------
+
+* comentários
+* novidades
+* próximas Atualizações
+* profiles
+* siglas e golpes
+* especiais
+* supers
+* contato
+* créditos
+
+-----------------------------------------------------------------------
+                             Comentários
+-----------------------------------------------------------------------
+
+Atualização para a versão 2000.06.27 do MUGEN
+
+
+-----------------------------------------------------------------------
+                             Novidades
+-----------------------------------------------------------------------
+
+* nada 
+
+-----------------------------------------------------------------------
+                        Próximas Atualizações
+-----------------------------------------------------------------------
+
+* não sei se vou atualizar
+
+-----------------------------------------------------------------------
+                             Profiles
+-----------------------------------------------------------------------
+Fighting Style:  
+Birthdate: 
+Birthplace: 
+Blood Type: 
+Height: cm
+Weight: kg	Hobby: 
+Favorite Food: 
+Favorite Sport: 
+Important Object:          
+Hates: 
+
+-----------------------------------------------------------------------
+                          Siglas e Golpes
+-----------------------------------------------------------------------
+
+      UB  U  UF     Z =            Y=              X= 
+        \ | /        
+     B ---o--- F 
+        / | \       C = especiais  B= chute forte  A= soco forte
+      DB  D  DF
+
+
+-----------------------------------------------------------------------
+                             Especiais
+-----------------------------------------------------------------------
+
+-needlehit fraco = D,DF,F + a
+
+-needlehit Forte = D,Df,F + b
+
+-Summon tails fraco = D,DB,B + a 
+
+-Summon Tails Forte = D,DB,B + b
+
+-BallShot Forte = D,DF,F + c
+
+-BallShot fraco = D,DB,B + c
+
+-----------------------------------------------------------------------
+                               Supers
+-----------------------------------------------------------------------
+
+-Needle Fury = D, DF .F + a+b  (Level 1)
+
+-Sonic Shield = D, DB, B 2X + a ou b (Level 1)
+
+-Super BallShot = D, DF, F 2X + c (Level 1)
+
+-Super Spin Dash = D, DF, F 2X + b ou a (Level 1) poder ser carregado infinitamente
+
+-Soni Go Satsu = a, a, F, b (Level 3)
+

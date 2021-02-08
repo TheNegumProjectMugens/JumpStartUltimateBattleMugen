@@ -1,0 +1,27 @@
+; Definition file for Player
+; Contains all the filenames needed for the character
+; Template player 9X-09-12
+
+; Character information
+[Info]
+name    ="Sonic by Cyanide/SuperSonic68"
+displayname ="Sonic"
+versiondate =12,25,2004
+mugenversion =04,14,2002
+author ="Cyanide"
+pal.defaults =1,2
+
+; Files for the character
+[Files]
+cmd     =Sonic.cmd
+cns     =Sonic.cns
+st      =Sonic.cns
+stcommon =SonicC.cns
+sprite  =Sonic.sff
+sound   =sonic2.snd
+anim    =Sonic.air
+pal1=Sonic.act
+pal2=Sonic.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

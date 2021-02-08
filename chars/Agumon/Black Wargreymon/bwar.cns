@@ -1,0 +1,851 @@
+; Constants and state file.
+; There are comments scattered through this file, so you may like to
+; take a look if would like to learn more about the cns.
+
+[Data]
+life = 1500			;Amount of life to start with
+power = 3000		;Amount of maximum power
+attack = 100		;attack power (more is stronger)
+defence = 100		;defensive power (more is stronger)
+fall.defence_up = 50	;Percentage to increase defense everytime player is knocked down
+liedown.time = 60		;Time which player lies down for, before getting up
+airjuggle = 15		;Number of points for juggling
+sparkno = 2			;Default hit spark number for HitDefs
+guard.sparkno = 40	;Default guard spark number
+KO.echo = 0			;1 to enable echo on KO
+volume = 0			;Volume offset (negative for softer)
+IntPersistIndex = 60	;Variables with this index and above will not have their values
+FloatPersistIndex = 40  ;reset to 0 between rounds or matches. There are 60 int variables,
+  				;indexed from 0 to 59, and 40 float variables, indexed from 0 to 39.
+  				;If omitted, then it defaults to 60 and 40 for integer and float
+  				;variables repectively, meaning that none are persistent, i.e. all
+  				;are reset. If you want your variables to persist between matches,
+  				;you need to override state 5900 from common1.cns.
+
+
+[Size]
+xscale = 1			;Horizontal scaling factor.
+yscale = 1.1			;Vertical scaling factor.
+ground.back = 15		;Player width (back, ground)
+ground.front = 16		;Player width (front, ground)
+air.back = 12		;Player width (back, air)
+air.front = 12		;Player width (front, air)
+height = 60			;Height of player (for opponent to jump over)
+attack.dist = 160		;Default attack distance
+proj.attack.dist = 90	;Default attack distance for projectiles
+proj.doscale = 0		;Set to 1 to scale projectiles too   
+head.pos = -5, -90	;Approximate position of head
+mid.pos = -5, -60		;Approximate position of midsection
+shadowoffset = 0		;Number of pixels to vertically offset the shadow
+draw.offset = 0,0		;Player drawing offset in pixels (x, y)
+
+[Velocity]
+walk.fwd  = 1.5		;Walk forward
+walk.back = -1.2		;Walk backward
+run.fwd  = 4.6, 0		;Run forward (x, y)
+run.back = -4.5,-3.8	;Hop backward (x, y)
+jump.neu = 0,-8.4		;Neutral jumping velocity (x, y)
+jump.back = -2.55		;Jump back Speed (x, y)
+jump.fwd = 2.5		;Jump forward Speed (x, y)
+runjump.back = -2.55,-8.1;Running jump speeds (opt)
+runjump.fwd = 4,-8.1	;.
+airjump.neu = 0,-8.1	;.
+airjump.back = -2.55	;Air jump speeds (opt)
+airjump.fwd = 2.5		;.
+
+[Movement]
+airjump.num = 1		;Number of air jumps allowed (opt)
+airjump.height = 35	;Minimum distance from ground before you can air jump (opt)
+yaccel = .44		;Vertical acceleration
+stand.friction = .85	;Friction coefficient when standing
+crouch.friction = .82	;Friction coefficient when crouching
+
+;---------------------------------------------------------------------------
+; Format:
+; [Statedef STATENO]
+; type = ?      S/C/A/L  stand/crouch/air/liedown
+; movetype = ?  I/A/H    idle/attack/gethit
+; physics = ?   S/C/A/N  stand/crouch/air/none
+; juggle = ?             air juggle points move requires
+;
+; [State STATENO, ?]     ? - any number you choose
+; type = ?
+; ...
+
+;---------------------------------------------------------------------------
+; Lose by Time Over
+; CNS difficulty: basic
+[Statedef 170]
+type = S
+ctrl = 0
+anim = 170
+velset = 0,0
+
+[State 170, 1]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+;---------------------------------------------------------------------------
+; Win state decider
+; CNS difficulty: basic
+[Statedef 180]
+type = S
+
+[State 180, 1]
+type = ChangeState
+trigger1 = Time = 0
+value = 181
+
+;---------------------------------------------------------------------------
+; Win pose 1
+; CNS difficulty: basic
+
+;---------------------------------------------------------------------------
+; Introduction
+; CNS difficulty: basic
+[Statedef 190]
+type = S
+ctrl = 0
+anim = 190
+velset = 0,0
+
+[State 190, 1] ;Freeze animation until PreIntro is over
+type = ChangeAnim
+trigger1 = RoundState = 0
+value = 190
+
+[State 190, 2] ;Assert this until you want "round 1, fight" to begin
+type = AssertSpecial
+trigger1 = 1
+flag = Intro
+
+[State 190, 4] ;Change to stand state
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+
+;---------------------------------------------------------------------------
+; Taunt
+; CNS difficulty: easy
+[Statedef 195]
+type = S
+ctrl = 0
+anim = 195
+velset = 0,0
+movetype = I
+physics = S
+sprpriority = 2
+
+[State 195, 2]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;unico golpe
+[StateDef 200]
+type = S
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 200
+poweradd = 20
+sprpriority = 2
+
+[state 0, snd]
+type= playsnd
+trigger1 = animelem = 1
+value = 1,0
+
+[State 200, 1]
+type = HitDef
+trigger1 = AnimElem = 5
+trigger2 = AnimElem = 6
+trigger3 = AnimElem = 7
+attr = S, NA
+damage = 100
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 10, 10
+sparkno = 0
+sparkxy = -10, -76
+hitsound = 5, 0
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -4
+airguard.velocity = -1.9,-.8
+air.type = High
+air.velocity = -1.4,-3
+air.hittime = 12
+
+[State 200, end]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+;unico golpe aereo
+[StateDef 210]
+type = A
+movetype= A
+physics = A
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 210
+poweradd = 20
+sprpriority = 2
+
+[state 3, snd]
+type = playsnd
+trigger1 = animelem = 1
+value = 0,1
+
+[State 210, 1]
+type = HitDef
+trigger1 = AnimElem = 4
+trigger2 = AnimElem = 5
+attr = S, NA
+damage = 100
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 10, 10
+sparkno = 0
+sparkxy = -10, -76
+hitsound = 5, 0
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -4
+airguard.velocity = -1.9,-.8
+air.type = High
+air.velocity = -1.4,-3
+air.hittime = 12
+
+; Standing Light Punch
+; CNS difficulty: easy
+;el gran poder LOL
+[StateDef 1000]
+type = S
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1000
+poweradd = -1000
+
+[state 0, snd]
+type = playsnd
+trigger1 = animelem = 13
+value = 1, 1
+
+[State 1000, 1]
+type = Projectile
+trigger1 = AnimElem = 16
+projanim = 1001
+projhitanim = 1002
+projpriority = 1
+projheightbound = -240, 100
+projedgebound = 100
+projscreenbound = 100
+projshadow = -1
+offset = 28,-21
+velocity = 3
+attr = S, SP
+damage   = 1000
+animtype = heavy
+guardflag = MA
+hitflag = MAFDP
+pausetime = 10,10
+hitsound   = 5,2
+sparkxy = 500,500
+guardsound = S6,0
+ground.type = Low
+ground.slidetime = 25
+ground.hittime  = 25
+ground.velocity = -6
+air.animtype = Back
+air.velocity = -4,-6
+air.juggle = 3
+air.fall = 1
+down.velocity = -4,-6
+down.hittime = 30
+down.bounce = 0
+
+[State 3050, Super A]
+type = SuperPause
+trigger1 = AnimElem = 12
+pos = 0,-30
+anim = 102
+sound = 20, 0
+poweradd = -1000
+
+[State 3050, Super B]
+type = AfterImage
+trigger1 = AnimElem = 1
+time = 3
+
+[State 3050, Super C]
+type = AfterImageTime
+trigger1 = AnimElemTime(2) >= 0
+time = 2
+
+[State 1000, end]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; Override common states (use same number to override) :
+;---------------------------------------------------------------------------
+; Jump Start
+[Statedef 40]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+
+[State 40, 1]
+type = VarSet
+trigger1 = Time = 0
+sysvar(1) = 0
+
+[State 40, 2]
+type = VarSet
+trigger1 = command = "holdfwd"
+sysvar(1) = 1
+
+[State 40, 3]
+type = VarSet
+trigger1 = command = "holdback"
+sysvar(1) = -1
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+y = const(velocity.jump.y)
+
+[State 40, 5]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = prevstateno = 100 ;RUN_FWD
+trigger1 = sysvar(1) = 1
+x = const(velocity.runjump.fwd.x)
+
+[state 40, snd]
+type = playsnd
+trigger1 = animelem = 1
+value = 0,1
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+
+;;hfgfhsdgf
+; AirJump Start
+[Statedef 45]
+type    = A
+physics = N
+ctrl = 0
+velset = 0,0
+
+[State 45, 1]
+type = ChangeAnim
+trigger1 = SelfAnimExist(44)
+value = 44
+
+[State 45, 2]
+type = ChangeAnim
+trigger1 = !SelfAnimExist(44)
+value = 41
+
+[State 45, 3]
+type = VarSet
+trigger1 = Time = 0
+sysvar(1) = 0
+
+[State 45, 4]
+type = VarSet
+trigger1 = command = "holdfwd"
+sysvar(1) = 1
+
+[State 45, 5]
+type = VarSet
+trigger1 = command = "holdback"
+sysvar(1) = -1
+
+[State 45, 6]
+type = VelSet
+trigger1 = Time = 2
+x = ifelse(sysvar(1)=0, const(velocity.airjump.neu.x), ifelse(sysvar(1)=1, const(velocity.airjump.fwd.x), const(velocity.airjump.back.x)))
+y = const(velocity.airjump.y)
+
+[state 40, snd]
+type = playsnd
+trigger1 = animelem = 1
+value = 0,1
+
+[State 45, 7]
+type = ChangeState
+trigger1 = Time = 2
+value = 50
+ctrl = 1
+
+
+;sonidos para caminar
+[Statedef 20]
+type    = S
+physics = S
+sprpriority = 0
+
+[State 20, 1]
+type = VelSet
+trigger1 = command = "holdfwd"
+x = const(velocity.walk.fwd.x)
+
+[state 20, snd]
+type = playsnd
+trigger1 = animelem = 4
+trigger2 = animelem = 8
+value = 0,0
+
+[State 20, 2]
+type = VelSet
+trigger1 = command = "holdback"
+x = const(velocity.walk.back.x)
+
+[State 20, 3]
+type = ChangeAnim
+triggerall = vel x > 0
+trigger1 = Anim != 20 && Anim != 5
+trigger2 = Anim = 5 && AnimTime = 0
+value = 20
+
+[State 20, 4]
+type = ChangeAnim
+triggerall = vel x < 0
+trigger1 = Anim != 21 && Anim != 5
+trigger2 = Anim = 5 && AnimTime = 0
+value = 21
+;---------------------------------------------------------------------------
+; States that are always executed (use statedef -2)
+;---------------------------------------------------------------------------
+ ;--------------------------------------------------------------------------
+; Hit Override
+;--------------------------------------------------------------------------
+[Statedef 16000] ; en el suelo
+type = U
+movetype = H
+physics = U
+ctrl = 1
+
+[State 6000, 1] ;efecto de brillo paleta (opcional)
+type = palfx
+trigger1 = time = 0
+add = 0,116,116
+sinadd = 0,15,15, 5
+color = 0
+time = 5
+
+[State 6000, 2]
+type = NotHitBy
+trigger1 = time = 0
+value = SCA
+time = 5
+
+[State 6000, 5]
+type = changestate
+trigger1 = time = 1
+value = 0
+ctrl = 1
+
+;------------------------
+
+[Statedef 16000] ; en el aire
+type = U
+movetype = H
+physics = U
+ctrl = 1
+
+[State 6000, 1] ;efecto de brillo paleta (opcional)
+type = palfx
+trigger1 = time = 0
+add = 0,116,116
+sinadd = 0,15,15, 5
+color = 0
+time = 5
+
+[State 6000, 2]
+type = NotHitBy
+trigger1 = time = 0
+value = SCA
+time = 5
+
+[State 6000, 5]
+type = changestate
+trigger1 = time = 1
+value = 50
+ctrl = 1
+;---------------------------------------------------------------------------------
+;la muerte
+; Muerte Final
+[Statedef 5150]
+type = S
+movetype = H
+anim = 5150
+velset = 0,0
+ctrl = 0
+
+[State 5150, NoKoSlow]
+type = AssertSpecial
+trigger1 = 1
+flag = NoKoSlow
+
+[State 5150, GlobalNoShadow]
+type = AssertSpecial
+trigger1 = Time = [1,5]
+trigger2 = Time = [23,24]
+trigger3 = Time = [31,32]
+trigger4 = Time = [40,41]
+flag = GlobalNoShadow
+
+[State 5150, Invisible]
+type = AssertSpecial
+trigger1 = Time >= 84
+flag = Invisible
+
+[State 5150, PlaySnd]
+type = PlaySnd
+trigger1 = Time = 26
+value = 5150,0
+
+[State 5150, PlaySnd 2]
+type = PlaySnd
+trigger1 = Time = 84
+value = 0,0
+
+[State 5150, AllPalFx]
+type = AllPalFx
+trigger1 = Time = 0
+time = 5
+add = 256,256,256
+
+[State 5150, AllPalFx 2]
+type = AllPalFx
+trigger1 = Time = 22
+trigger2 = Time = 30
+trigger3 = Time = 39
+time = 2
+add = 256,256,256
+
+[State 5150, Explod]
+type = Explod
+trigger1 = Time = 26
+trigger2 = Time = 32
+anim = 15150
+id = 5150
+pos = 0,-47
+vel = 0,-4
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod 2]
+type = Explod
+trigger1 = Time = 26
+trigger2 = Time = 32
+anim = 15150
+id = 5150
+pos = 34,-12
+vel = 3,-2
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod 3]
+type = Explod
+trigger1 = Time = 26
+trigger2 = Time = 32
+anim = 15150
+id = 5150
+pos = 34,24
+vel = 3,2
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod 4]
+type = Explod
+trigger1 = Time = 26
+trigger2 = Time = 32
+anim = 15150
+id = 5150
+pos = 0,42
+vel = 0,4
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod 5]
+type = Explod
+trigger1 = Time = 26
+trigger2 = Time = 32
+anim = 15150
+id = 5150
+pos = -36,24
+vel = -3,2
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod 6]
+type = Explod
+trigger1 = Time = 26
+trigger2 = Time = 32
+anim = 15150
+id = 5150
+pos = -36,-12
+vel = -3,-2
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = 0,-4
+vel = 0,-2
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 2]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = 10,6
+vel = 2,0
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 3]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = 0,16
+vel = 0,2
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 4]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = -10,6
+vel = -2,0
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 5]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = 5,-1
+vel = 1.5,-1.5
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 6]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = 9,11
+vel = 1.5,1.5
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 7]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = -7,11
+vel = -1.5,1.5
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 8]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = -7,-1
+vel = -1.5,-1.5
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 9]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = 10,0
+vel = 1,-1
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 10]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = 10,14
+vel = 1,1
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 11]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = -8,0
+vel = -1,1
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 12]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = -8,14
+vel = -1,-1
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 13]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = 9,3
+vel = .5,-.5
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 14]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = 9,9
+vel = .5,.5
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 15]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = -6,9
+vel = -.5,.5
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, Explod B 16]
+type = Explod
+trigger1 = Time = 84
+anim = 15151
+id = 5151
+pos = -6,3
+vel = -.5,-.5
+removetime = -1
+sprpriority = 5
+ownpal = 1
+
+[State 5150, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+;---------------------------------------------------------------------------
+; States that are always executed (use statedef -2)
+;---------------------------------------------------------------------------
+[Statedef -2]
+
+[State -2, KO]
+type = ChangeState
+triggerall = StateNo != 5150
+triggerall = StateNo = [5000, 5999]
+trigger1 = Lose
+trigger2 = !Life
+value = 5150
+
+;---------------------------------------------------------------------------
+; States that are executed when in self's state file (use statedef -3)
+;---------------------------------------------------------------------------
+
+[Statedef -3]
+
+;This controller plays a sound everytime the player lands from a jump, or
+;from a back-dash.
+[State -3, Landing Sound]
+type = PlaySnd
+triggerall = Time = 1
+trigger1 = stateno = 52 ;Jump land
+trigger2 = stateno = 106 ;Run-back land
+value = 0, 0
+
+;hhhh
+[State -3, Nobodygethurt suelo]
+type = HitOverride
+trigger1 = statetype = S
+time = 1
+attr = SCA, NA,SA,HA,NP,SP,HP,NT,ST,HT
+slot = 0
+stateno = 16000
+
+[State -3, Nobodygethurt aire]
+type = HitOverride
+trigger1 = statetype = A
+time = 1
+attr = SCA, NA,SA,HA,NP,SP,HP,NT,ST,HT
+slot = 0
+stateno = 16001
+
