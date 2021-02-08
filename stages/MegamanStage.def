@@ -1,0 +1,147 @@
+;--------------------------------------------------------
+[Info]
+name = "Megaman Stage"
+auhor = "N-Mario"
+
+;--------------------------------------------------------
+[Camera]
+startx = 0
+starty = 0
+boundleft = -300
+boundright = 900
+boundhigh = -100
+boundlow = 0
+verticalfollow = .5
+floortension = 0
+tension = 50
+
+;--------------------------------------------------------
+[PlayerInfo]
+;--- Player 1 ---
+p1startx = -90
+p1starty = 0
+p1startz = 0
+p1facing = 1
+
+;--- Player 2 ---
+p2startx = 90
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+;--- Common ---
+leftbound  = -2000
+rightbound =  2000
+topbound  =  0
+botbound  =  0
+
+;--------------------------------------------------------
+[Scaling]
+topz     = 0
+botz     = 50
+topscale = 1
+botscale = 1.2
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 20
+screenright = 20
+
+;--------------------------------------------------------
+[StageInfo]
+zoffset = 198
+autoturn = 1
+resetBG = 1
+
+;--------------------------------------------------------
+[Shadow]
+color = 128,128,128
+yscale = 0
+reflect = 0
+
+;--------------------------------------------------------
+[Music]
+bgmusic = Sound/ZX-DangerAttraction.mp3
+bgvolume = 255
+
+;========================================================
+;--------------------------------------------------------
+; Background definition
+;-------------------------------------------------------
+[BGdef]
+spr = MegamanStage.sff
+debugbg = 0
+
+;----------
+[BG Sky]
+type  = normal
+spriteno = 0, 0
+layerno = 0              
+start = -500, 0
+delta = 0.8, 0.8
+trans = none
+tile = 1, 1
+tilespacing = 0,0
+mask = 0
+
+;----------
+[BG Background]
+type  = normal
+spriteno = 0, 1
+layerno = 0              
+start = -500, 240
+delta = 0.8, 0.8
+trans = none
+tile = 1, 0
+tilespacing = 0,0
+mask = 0
+
+;----------
+[BG Coaster]
+type  = normal
+spriteno = 1, 0
+layerno = 0              
+start = -500, 240
+delta = 0.9, 0.8
+trans = none
+tile = 0, 0
+tilespacing = 0,0
+mask = 1
+
+;----------
+[BG Mettaur]
+type  = normal
+spriteno = 1, 1
+layerno = 0              
+start = -500, 240
+delta = 0.9, 0.8
+trans = none
+tile = 0, 0
+tilespacing = 0,0
+mask = 1
+
+;----------
+[BG Gate]
+type  = normal
+spriteno = 2, 1
+layerno = 0              
+start = -500, 240
+delta = 1, 1
+trans = none
+tile = 1, 0
+tilespacing = 0,0
+mask = 1
+
+;----------
+[BG Floor]
+type  = normal
+spriteno = 2, 0
+layerno = 0              
+start = -500, 240
+delta = 1, 1
+trans = none
+tile = 1, 0
+tilespacing = 0,0
+mask = 0
+
+;----------

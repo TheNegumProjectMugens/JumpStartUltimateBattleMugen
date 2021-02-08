@@ -1,0 +1,177 @@
+; By Jo
+;Web : http://createandplay.free.fr
+;E-mail : viciousjo@hotmail.fr 
+;Edited by Stig87
+;email = b_blue34@yahoo.com
+;Mugendream.bravehost.com
+;Mugendream.angelfire.com
+
+
+[Info]
+name = "Cell Games"
+
+[Camera]
+startx = 0
+starty = 0
+boundleft = -224
+boundright = 223
+boundhigh = -300
+boundlow = 0
+verticalfollow = .7
+floortension = 0
+tension = 50
+
+[PlayerInfo]
+p1startx = -80
+p1starty = 0
+p1startz = 0
+p1facing = 1
+p2startx = 80
+p2starty = 0
+p2startz = 0
+p2facing = -1
+leftbound = -1000
+rightbound = 1000
+topbound = 0
+botbound = 0
+
+[Scaling]
+topz = 0
+botz = 50
+topscale = 1
+botscale = 1.2
+
+[Bound]
+screenleft = 24
+screenright = 24
+
+[StageInfo]
+zoffset = 210
+autoturn = 1
+resetBG = 1
+
+[Shadow]
+intensity = 96
+color = 40,40,40
+yscale = 0.3
+reflect = 0
+
+[Music]
+bgmusic =stages/MegatonaFurioso.mp3
+bgvolume =255
+
+[BGdef]
+spr =stages/dbz_cell_games.sff
+debugbg =0 
+debug=0
+
+[BG Arriere]
+type = normal
+spriteno = 0,0
+start = -384,-16
+delta = .9,.8
+mask = 1
+
+[BG Premier]
+type = normal
+spriteno = 1,0
+start = -384,0
+delta = 1,1
+mask = 1
+
+[BG TankCD]
+type = anim
+actionno = 1
+start = 88,110
+delta = 1,1
+mask = 1
+
+[Begin action 1]
+2,0,0,0,100
+2,1,0,0,20
+2,2,0,0,20
+2,3,0,0,15
+2,4,0,0,15
+2,5,0,0,10
+2,6,0,0,10
+2,7,0,0,20
+2,8,0,0,25
+2,9,0,0,20
+2,2,0,0,20
+2,1,0,0,20
+
+[BG TankCG]
+type = anim
+actionno = 2
+start = -155,112
+delta = 1,1
+mask = 1
+
+[Begin action 2]
+3,0,0,0,85
+3,1,0,0,20
+3,2,0,0,20
+3,3,0,0,15
+3,4,0,0,10
+3,5,0,0,10
+3,6,0,0,20
+3,7,0,0,25
+3,8,0,0,20
+3,2,0,0,20
+3,1,0,0,20
+
+[BG TankG]
+type = anim
+actionno = 3
+start = -310,67
+delta = 1,1
+mask = 1
+
+[Begin action 3]
+4,0,0,0,100
+4,1,0,0,25
+4,2,0,0,25
+4,3,0,0,25
+4,4,0,0,100
+4,3,0,0,25
+4,2,0,0,25
+4,1,0,0,25
+
+[BG TankD]
+type = anim
+actionno = 4
+start = 183,75
+delta = 1,1
+mask = 1
+
+[Begin action 4]
+5,0,0,0,150
+5,1,0,0,30
+5,2,0,0,30
+5,3,0,0,30
+5,4,0,0,30
+5,5,0,0,30
+5,6,0,0,30
+5,7,0,0,90
+5,6,0,0,30
+5,5,0,0,30
+5,4,0,0,30
+5,3,0,0,30
+5,2,0,0,30
+5,1,0,0,30
+
+[BG Troupe]
+type = anim
+actionno = 6
+start = -115,162
+delta = 1,1
+mask = 1
+
+[Begin action 6]
+7,0,0,0,17
+7,1,0,0,17
+7,2,0,0,17
+7,3,0,0,17
+7,4,0,0,17
+7,5,0,0,17
+7,6,0,0,17

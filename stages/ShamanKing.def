@@ -1,0 +1,174 @@
+Creator: Jerrydrizzt
+Email: Jerrydrizzt@Gmail.com
+Msn: Jerrydrizzt@Hotmail.com
+Contact Me: Im Usually on Mfg or Naruto Mugen at Least once a day you Can Contact me there if you have to ^^
+;--------------------------------------------------------
+; Definition of KFM's stage
+; *** denotes values you should change/check for each stage.
+; The term "background" is used to mean both backgrounds and foregrounds.
+
+;--------------------------------------------------------
+[Info]
+name = "Shaman King Stage"
+
+;--------------------------------------------------------
+[Camera]
+startx = 0
+starty = 0
+
+boundleft = -25
+boundright = 36
+boundhigh = -100
+boundlow = 
+verticalfollow = .3
+floortension = 0
+tension = 60
+
+;--------------------------------------------------------
+[PlayerInfo]
+p1startx = -70
+p1starty = 0
+p1startz = 0
+p1facing = 1
+
+p2startx = 70
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+leftbound  = -1000
+rightbound = 1000
+topbound  =  0
+botbound  =  0
+
+;--------------------------------------------------------
+[Scaling]
+topz  = 0
+botz  = 50
+topscale = 1
+botscale = 1.2
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 15
+screenright = 15
+
+;--------------------------------------------------------
+[StageInfo]
+zoffset = 211
+autoturn = 1
+resetBG = 1
+
+;--------------------------------------------------------
+[Shadow]
+intensity = 160
+color = 0,0,0
+yscale = 0.2
+fade.range = -400,100
+
+;--------------------------------------------------------
+[Reflection]
+intensity=
+
+;--------------------------------------------------------
+[Music]
+bgmusic = sound/Shaman_King.mp3
+bgvolume = 200
+Loop = 1
+;--------------------------------------------------------
+[BGDef]
+spr = ShamanKing.sff
+debugbg = 
+
+;--------------------------------------------------------
+[BG Floor]
+type  = normal
+spriteno = 0,0
+start = 0, 181
+delta = 1,1
+xscale = 1, 1.75
+yscalestart = 100
+yscaledelta = 1.2
+
+[BG Yoh]
+type  = Anim
+spriteno = 1,0
+start = 0, 181
+delta = 1,1
+xscale = 1, 1.75
+yscalestart = 100
+yscaledelta = 1.2
+mask = 1
+Actionno = 1
+Id = 37
+
+;[BGCtrl Yoh 1]
+type = PosAdd
+time = 0,0,1
+x = 1
+ctrlID = 37
+
+;[BGCtrl Yoh 2]
+type = posset
+X = 0
+time = 0,0,488
+ctrlID = 37
+
+[BG Floor]
+type  = Anim
+spriteno = 2,0
+start = 0, 181
+delta = 1,1
+xscale = 1, 1.75
+yscalestart = 100
+yscaledelta = 1.2
+mask = 1
+Actionno = 2
+
+[BG Floor]
+type  = Anim
+spriteno = 3,0
+start = 0, 181
+delta = 1,1
+xscale = 1, 1.75
+yscalestart = 100
+yscaledelta = 1.2
+mask = 1
+Actionno = 3
+;--------------------------------------------------------
+[Begin Action 1]
+1,0, 0,0, 14 ; 
+1,1, 0,0, 14 ;
+1,2, 0,0, 14 ;
+1,3, 0,0, 14 ; 
+1,2, 0,0, 14 ; 
+1,1, 0,0, 14 ;
+
+[Begin Action 2]
+2,0, 0,0, 6 ; 
+2,1, 0,0, 6 ;
+2,2, 0,0, 6 ;
+2,3, 0,0, 6 ;
+2,4, 0,0, 6 ; 
+2,5, 0,0, 6 ;
+2,6, 0,0, 6 ;
+
+[Begin Action 3]
+3,0, 0,0, 9 ; 
+3,1, 0,0, 9 ; 
+3,2, 0,0, 9 ; 
+3,3, 0,0, 9 ; 
+3,0, 0,0, 9 ; 
+3,1, 0,0, 9 ; 
+3,2, 0,0, 9 ; 
+3,3, 0,0, 9 ;
+3,0, 0,0, 9 ; 
+3,1, 0,0, 9 ; 
+3,2, 0,0, 9 ; 
+3,3, 0,0, 9 ;
+3,4, 0,0, 9 ; 
+3,5, 0,0, 9 ; 
+3,6, 0,0, 9 ; 
+3,7, 0,0, 9 ;
+3,8, 0,0, 9 ; 
+3,9, 0,0, 9 ;
