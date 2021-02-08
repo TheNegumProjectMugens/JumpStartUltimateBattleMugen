@@ -1,0 +1,90 @@
+; -------------------------------------------------------------------
+; dragon ball z leçacy of warriors by vegeta
+; intro Configuration.
+; -------------------------------------------------------------------
+
+[Info]
+name = "dragon ball z battle royal"
+author = "vegeta"
+versiondate = 11-08-2011
+mugenversion = 1.0
+localcoord = 640,480
+
+;------------------------------------
+[SceneDef]
+spr =intro.sff
+
+;------------------------------------
+[Scene 0]
+; Fade
+fadein.time = 0
+fadeout.time = 0
+; Screen color
+clearcolor = 0,0,0  ;255,255,255
+; Overlay Anims (from 0 to 9)
+layerall.pos = 0,0 ;Default position for all layers
+layer0.anim =  0 
+layer0.offset = 0,0  
+layer1.anim =  1 
+layer1.offset = 0,0 
+layer2.anim =  2 
+layer2.offset = 0,0 
+layer3.anim =  3 
+layer3.offset = 0,0 
+layer4.anim =  4 
+layer4.offset = 0,0 
+layer5.anim = 5
+layer5.offset = 0,0
+;layer8.anim =  8 
+;layer8.offset = 0,0 
+;layer9.anim =  9 
+;layer9.offset = 0,0 
+
+; Music
+bgm = sound/title.mp3
+bgm.loop = 1
+; Total time
+end.time = -1
+
+;------------------------------------
+;Animation for intro
+
+
+[Begin Action 0]
+3,0,0,0,-1
+
+[Begin Action 1]
+3,1,0,0,-1
+
+[Begin Action 2]
+3,2,0,0,-1,,a
+
+[Begin Action 3]
+3,3,0,0,-1
+
+[Begin Action 4]
+4,0,0,0,25,,
+4,1,0,0,12,,
+
+[Begin Action 5]
+0,0,0,0,-1
+
+
+;[Begin Action 8]
+;1,0,0,0,40
+;1,1,0,0,3
+;1,2,0,0,3
+;1,3,0,0,3
+;1,4,0,0,3
+;1,5,0,0,3
+;1,6,0,0,-1
+
+;[Begin Action 9]
+;2,0,0,0,40
+;2,1,0,0,3
+;2,2,0,0,3
+;2,3,0,0,3
+;2,4,0,0,3
+;2,5,0,0,3
+;2,6,0,0,-1
+

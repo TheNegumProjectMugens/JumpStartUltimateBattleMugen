@@ -1,0 +1,22 @@
+
+[Info]
+name = "DBZ M.U.G.E.N Edition 2011 Congrats"
+author = "RistaR87"
+localcoord = 640,480
+
+[SceneDef]
+spr = final.sff
+
+[Scene 0]
+fadein.time = 100
+fadeout.time = 100
+clearcolor = 0,0,0
+layerall.pos = 0,0 ;Default position for all layers
+layer0.anim =  0       ;Anim action number
+bgm = DBK_Short.mp3
+bgm.loop = 0 
+end.time = 600
+[Begin Action 0]
+0,1, 0,0, 1000
+
+
